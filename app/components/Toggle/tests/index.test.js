@@ -13,16 +13,16 @@ describe('<Toggle />', () => {
         id: 'boilerplate.containers.LocaleToggle.en',
         defaultMessage: defaultEnMessage,
       },
-      de: {
+      pt: {
         id: 'boilerplate.containers.LocaleToggle.en',
         defaultMessage: defaultDeMessage,
       },
     });
     const renderedComponent = shallow(
       <IntlProvider locale="en">
-        <Toggle values={['en', 'de']} messages={messages} />
+        <Toggle values={['en', 'pt']} messages={messages} />
       </IntlProvider>
     );
-    expect(renderedComponent.contains(<Toggle values={['en', 'de']} messages={messages} />)).toBe(true);
+    expect(renderedComponent.contains(<Toggle values={['en', 'pt']} messages={messages} />)).toBe(true);
   });
 });

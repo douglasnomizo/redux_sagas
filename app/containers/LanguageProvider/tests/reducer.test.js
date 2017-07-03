@@ -13,8 +13,8 @@ describe('languageProviderReducer', () => {
   });
 
   it('changes the locale', () => {
-    expect(languageProviderReducer(undefined, { type: CHANGE_LOCALE, locale: 'de' }).toJS()).toEqual({
-      locale: 'de',
+    expect(languageProviderReducer(undefined, { type: CHANGE_LOCALE, locale: 'pt' }).toJS()).toEqual({
+      locale: 'pt',
     });
   });
 });
