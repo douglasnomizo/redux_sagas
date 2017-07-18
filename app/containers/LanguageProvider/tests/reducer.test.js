@@ -8,13 +8,13 @@ import {
 describe('languageProviderReducer', () => {
   it('returns the initial state', () => {
     expect(languageProviderReducer(undefined, {})).toEqual(fromJS({
-      locale: 'en',
+      locale: 'pt',
     }));
   });
 
   it('changes the locale', () => {
-    expect(languageProviderReducer(undefined, { type: CHANGE_LOCALE, locale: 'pt' }).toJS()).toEqual({
-      locale: 'pt',
+    expect(languageProviderReducer(undefined, { type: CHANGE_LOCALE, locale: 'en' }).toJS()).toEqual({
+      locale: 'en',
     });
   });
 });

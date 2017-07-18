@@ -14,6 +14,8 @@ describe('appReducer', () => {
       loading: false,
       error: false,
       currentUser: false,
+      apiKey: '',
+      corsUrl: 'https://cors-anywhere.herokuapp.com/',
       userData: fromJS({
         repositories: false,
       }),

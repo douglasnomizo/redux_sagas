@@ -7,6 +7,12 @@ const makeSelectAnimalType = () => createSelector(
   (adoptionState) => adoptionState.get('animalType')
 );
 
+const makeSelectAnimals = () => createSelector(
+  selectAdoptionPageDomain(),
+  (adoptionState) => adoptionState.get('animals')
+);
+
 export {
   makeSelectAnimalType,
+  makeSelectAnimals,
 };

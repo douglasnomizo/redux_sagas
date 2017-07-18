@@ -22,7 +22,6 @@ function checkStatus(response) {
   if (response.status >= 200 && response.status < 300) {
     return response;
   }
-  console.log(response);
   const error = new Error(response.statusText);
   error.response = response;
   throw error;
@@ -37,8 +36,6 @@ function checkStatus(response) {
  * @return {object}           The response data
  */
 export default function request(url, options) {
-  console.log(url);
-  console.log(options);
   return fetch(url, options)
     .then(checkStatus)
     .then(parseJSON);

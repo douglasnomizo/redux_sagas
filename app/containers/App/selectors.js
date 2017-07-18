@@ -21,6 +21,11 @@ const makeSelectError = () => createSelector(
   (globalState) => globalState.get('error')
 );
 
+const makeSelectCors = () => createSelector(
+  selectGlobal,
+  (globalState) => globalState.get('corsUrl')
+);
+
 const makeSelectRepos = () => createSelector(
   selectGlobal,
   (globalState) => globalState.getIn(['userData', 'repositories'])
@@ -55,4 +60,5 @@ export {
   makeSelectRepos,
   makeSelectLocationState,
   makeSelectApiKey,
+  makeSelectCors,
 };

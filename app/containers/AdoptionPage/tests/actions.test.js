@@ -1,16 +1,25 @@
-import { loadAnimal, animalsLoaded, animalsLoadingError } from '../actions';
-import { LOAD_ANIMALS, LOAD_ANIMALS_SUCCESS, LOAD_ANIMALS_ERROR } from '../constants';
+import { changeAnimal, loadAnimal, animalsLoaded, animalsLoadingError } from '../actions';
+import { CHANGE_ANIMAL, LOAD_ANIMALS, LOAD_ANIMALS_SUCCESS, LOAD_ANIMALS_ERROR } from '../constants';
 
 describe('AdoptionPage actions', () => {
+  describe('Load Animals', () => {
+    it('should return the correct type and the animal type', () => {
+      const expected = {
+        type: LOAD_ANIMALS,
+      };
+      expect(loadAnimal()).toEqual(expected);
+    });
+  });
+
   describe('Change animal type', () => {
     it('should return the correct type and the animal type', () => {
       const fixture = 'dog';
 
       const expected = {
-        type: LOAD_ANIMALS,
+        type: CHANGE_ANIMAL,
         animalType: fixture,
       };
-      expect(loadAnimal(fixture)).toEqual(expected);
+      expect(changeAnimal(fixture)).toEqual(expected);
     });
   });
 

@@ -18,11 +18,15 @@ import {
   LOAD_REPOS_ERROR,
 } from './constants';
 
+const PET_FINDER_API_KEY = '';
+
 // The initial state of the App
 const initialState = fromJS({
   loading: false,
   error: false,
   currentUser: false,
+  apiKey: PET_FINDER_API_KEY,
+  corsUrl: 'https://cors-anywhere.herokuapp.com/',
   userData: {
     repositories: false,
   },

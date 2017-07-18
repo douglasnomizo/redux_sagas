@@ -1,7 +1,4 @@
-import { cancel, take, put, takeLatest } from 'redux-saga/effects';
-import { createMockTask } from 'redux-saga/lib/utils';
-
-import { LOCATION_CHANGE } from 'react-router-redux';
+import { put, takeLatest } from 'redux-saga/effects';
 
 import { LOAD_ANIMALS } from 'containers/App/constants';
 import { animalsLoaded, animalsLoadingError } from 'containers/AdoptionPage/actions';
@@ -45,20 +42,8 @@ describe('fetchAnimals Saga', () => {
 
 describe('findPetsForAdoption Saga', () => {
   const findPetsForAdoptionSaga = findPetsForAdoption();
-  const mockedTask = createMockTask();
-
   it('should start task to watch for LOAD_ANIMALS action', () => {
     const takeLatestDescriptor = findPetsForAdoptionSaga.next().value;
     expect(takeLatestDescriptor).toEqual(takeLatest(LOAD_ANIMALS, fetchAnimals));
-  });
-
-  it('should yield until LOCATION_CHANGE action', () => {
-    const takeDescriptor = findPetsForAdoptionSaga.next(mockedTask).value;
-    expect(takeDescriptor).toEqual(take(LOCATION_CHANGE));
-  });
-
-  it('should cancel the forked task when LOCATION_CHANGE happens', () => {
-    const cancelDescriptor = findPetsForAdoptionSaga.next().value;
-    expect(cancelDescriptor).toEqual(cancel(mockedTask));
   });
 });
