@@ -39,6 +39,27 @@ export default function createRoutes(store) {
         importModules.catch(errorLoading);
       },
     }, {
+      path: '/adoption',
+      name: 'adoption',
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          import('containers/AdoptionPage/reducer'),
+          import('containers/AdoptionPage/sagas'),
+          import('containers/AdoptionPage'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([reducer, sagas, component]) => {
+          injectReducer('adoption', reducer.default);
+          injectSagas(sagas.default);
+
+          renderRoute(component);
+        });
+
+        importModules.catch(errorLoading);
+      },
+    }, {
       path: '/features',
       name: 'features',
       getComponent(nextState, cb) {

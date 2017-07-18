@@ -17,8 +17,8 @@ function Header({ bannerUrl }) {
         <HeaderLink to="/">
           <FormattedMessage {...messages.home} />
         </HeaderLink>
-        <HeaderLink to="/features">
-          <FormattedMessage {...messages.features} />
+        <HeaderLink to="/adoption">
+          <FormattedMessage {...messages.adoption} />
         </HeaderLink>
       </NavBar>
     </div>

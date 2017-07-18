@@ -33,7 +33,7 @@ export function App(props) {
           { name: 'description', content: 'A React.js Boilerplate application' },
         ]}
       />
-      <Header bannerUrl="http://lorempixel.com/800/400/cats" />
+      <Header bannerUrl="" />
       {React.Children.toArray(props.children)}
       <Footer />
     </AppWrapper>

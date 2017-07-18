@@ -42,6 +42,11 @@ const makeSelectLocationState = () => {
   };
 };
 
+const makeSelectApiKey = () => createSelector(
+  selectGlobal,
+  (globalState) => globalState.get('apiKey')
+);
+
 export {
   selectGlobal,
   makeSelectCurrentUser,
@@ -49,4 +54,5 @@ export {
   makeSelectError,
   makeSelectRepos,
   makeSelectLocationState,
+  makeSelectApiKey,
 };
